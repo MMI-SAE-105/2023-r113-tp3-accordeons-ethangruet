@@ -10,17 +10,25 @@
   <body>
     <h1>Accordéon avec des booléens</h1>
     <div class="accordeon">
-      <section>
-        <button>bouton 1</button>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi esse qui perspiciatis culpa quae quaerat doloribus illum, assumenda minus adipisci, aspernatur atque ullam earum quod ab accusamus, odio voluptatum alias.</p>
+      <section x-data="{ open: false}">
+        <button @click="open = ! open">bouton 1</button>
+        <span x-show="open" x-transition>
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi esse qui perspiciatis culpa quae quaerat doloribus illum, assumenda minus adipisci, aspernatur atque ullam earum quod ab accusamus, odio voluptatum alias.</p>
+        </span>
       </section>
-      <section>
-        <button>bouton 2</button>
-        <p>Blanditiis sequi sint esse quas dignissimos recusandae fugit nulla magnam magni cum aliquid impedit, voluptatem soluta dolor nam molestias cupiditate atque saepe dicta dolorum reprehenderit quibusdam. A provident neque sed?</p>
+
+      <section x-data="{ open: false}">
+        <button @click="open = ! open">bouton 2</button>
+        <span x-show="open" x-transition>
+          <p>Blanditiis sequi sint esse quas dignissimos recusandae fugit nulla magnam magni cum aliquid impedit, voluptatem soluta dolor nam molestias cupiditate atque saepe dicta dolorum reprehenderit quibusdam. A provident neque sed?</p>
+        </span>
       </section>
-      <section>
-        <button>bouton 3</button>
-        <p>Harum, in a id cupiditate fugiat odio sint nulla dolores, consequatur animi laborum accusamus autem. Illum non deserunt inventore rerum odio aliquam eligendi nostrum eum reiciendis, dolorum, debitis dolore vitae?</p>
+
+      <section x-data="{ open: false}">
+        <button @click="open = ! open">bouton 3</button>
+        <span x-show="open" x-transition>
+          <p>Harum, in a id cupiditate fugiat odio sint nulla dolores, consequatur animi laborum accusamus autem. Illum non deserunt inventore rerum odio aliquam eligendi nostrum eum reiciendis, dolorum, debitis dolore vitae?</p>
+        </span>
       </section>
     </div>
   </body>
