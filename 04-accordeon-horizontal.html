@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Accordéon horizontal</title>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <style>
     #accordeon {
     display: flex;  /* pour que les éléments soient alignés horizontalement */
@@ -15,7 +16,7 @@
     #accordeon li {
     width: 107px;  /* largeur de chaque élément replié 107px */
     overflow: hidden;  /* pour cacher le contenu dépassant de l'élément */
-    transition: width 2s;  /* pour l'animation, transition sur width */
+    transition: width 1s;  /* pour l'animation, transition sur width */
     background-color: #eee;  /* couleur de fond #eee */
     list-style-type: none;  /* pour enlever les puces */
     margin: 3px;  /* pour espacer les éléments, marge de 3px */
@@ -50,8 +51,8 @@
   </head>
   <body>
     <h1>Accordéon horizontal</h1>
-    <ul id="accordeon">
-      <li>
+    <ul id="accordeon" x-data="{isOpen:0}">
+      <li @click="isOpen = 1" :class="{actif:isOpen === 1,}">
         <figure>
           <img src="https://picsum.photos/100?random=1" alt="" width="102">
           <figcaption>
@@ -59,7 +60,7 @@
             <p>Lorem ipsum dolor sit amet consectetur.</p>
           </figcaption>
         </figure>
-      </li>
+      </li @click="isOpen = 2" :class="{actif:isOpen === 2,}">
       <li class="actif">
         <figure>
           <img src="https://picsum.photos/100?random=2" alt="" width="102">
@@ -69,7 +70,7 @@
           </figcaption>
         </figure>
       </li>
-      <li>
+      <li @click="isOpen = 3" :class="{actif:isOpen === 3,}">
         <figure>
           <img src="https://picsum.photos/100?random=3" alt="" width="102">
           <figcaption>
