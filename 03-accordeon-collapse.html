@@ -10,5 +10,12 @@
   </head>
   <body>
     <h1>Accordéon avec <code>x-collapse</code></h1>
+    <div x-data="{ expanded: false }">
+      <section>
+        <button @click="expanded= 1">bouton 1</button>
+        <p x-show="expanded=== 1" x-collapse>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima error consequatur tempore quas, natus inventore mollitia ab, saepe accusamus dignissimos praesentium sit. Quae, perferendis veritatis earum soluta nisi blanditiis delectus.</p>
+      </section>
+    
+    </div>
   </body>
 </html>
