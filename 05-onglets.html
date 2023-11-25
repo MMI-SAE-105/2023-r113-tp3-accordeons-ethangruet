@@ -17,10 +17,14 @@
       [role="tabpanel"].actif{
         opacity: 1;
       }
+      .titre {
+        font-size: 40;
+        font-family: sans-serif;
+      }
     </style>
   </head>
   <body>
-    <h1>Albums de Damso</h1>
+    <h1 class="titre">Albums de Damso</h1>
     <div id="onglets" x-data="{IsOpen:1}">
      <ul role="tablist">
       <li role="tab" :class="{actif:IsOpen === 1}"><button @click="IsOpen = 1">Onglet 1</button></li>
