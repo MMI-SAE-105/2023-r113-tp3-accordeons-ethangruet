@@ -18,20 +18,31 @@
         opacity: 1;
       }
       .titre {
-        font-size: 50;
+        font-size: 40px;
         font-family: sans-serif;
       }
       .sous-titre {
-        font-size: 35;
+        font-size: 35px;
         font-family: sans-serif;
         text-align: center;
       }
       .texte {
         margin-left: 400px;
         margin-right: 400px;
-        font-size: 20;
+        font-size: 20px;
         font-family: sans-serif;
         text-align: center;
+      }
+      .bouton {
+        border-radius: 10px;
+        font-size: 20px;
+        font-family: sans-serif;
+        text-align: center;
+        width: 150px;
+        padding: 5px;
+        margin: 5px;
+        cursor: pointer;
+        background-color: #F4EEEE;
       }
     </style>
   </head>
@@ -39,9 +50,9 @@
     <h1 class="titre">Albums de Damso</h1>
     <div id="onglets" x-data="{IsOpen:1}">
      <ul role="tablist">
-      <li role="tab" :class="{actif:IsOpen === 1}"><button @click="IsOpen = 1">Ipséité</button></li>
-      <li role="tab" :class="{actif:IsOpen === 2}"><button @click="IsOpen = 2">Lithopédion</button></li>
-      <li role="tab" :class="{actif:IsOpen === 3}"><button @click="IsOpen = 3">QALF</button></li>
+      <li role="tab" :class="{actif:IsOpen === 1}"><button class="bouton" @click="IsOpen = 1">Ipséité</button></li>
+      <li role="tab" :class="{actif:IsOpen === 2}"><button class="bouton" @click="IsOpen = 2">Lithopédion</button></li>
+      <li role="tab" :class="{actif:IsOpen === 3}"><button class="bouton" @click="IsOpen = 3">QALF</button></li>
      </ul>
      <div class="parentspanneaux">
       <div role="tabpanel" :class="{actif:IsOpen === 1,}">
