@@ -6,27 +6,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Onglets</title>
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <style>
+      .parentspanneaux {
+        position: relative;
+      }
+      [role="tabpanel"]{
+        position: absolute;
+        opacity: 0;
+      }
+      [role="tabpanel"].actif{
+        opacity: 1;
+      }
+    </style>
   </head>
   <body>
     <h1>Onglets</h1>
-    <div id="onglets" x-data="{
-      ouvert : 1,
-     }">
+    <div id="onglets" x-data="{IsOpen:1}">
      <ul role="tablist">
       <li role="tab" :class="{actif:IsOpen === 1}"><button @click="IsOpen = 1">Onglet 1</button></li>
       <li role="tab" :class="{actif:IsOpen === 2}"><button @click="IsOpen = 2">Onglet 2</button></li>
       <li role="tab" :class="{actif:IsOpen === 3}"><button @click="IsOpen = 3">Onglet 3</button></li>
      </ul>
-     <div>
-      <div role="tabpanel" :class="{actif:ouvert === 1,}">
+     <div class="parentspanneaux">
+      <div role="tabpanel" :class="{actif:IsOpen === 1,}">
         <h1>Panneau 1</h1>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus amet quaerat aliquid pariatur error! Itaque laboriosam quam, error repellendus exercitationem velit, corporis optio, beatae provident in commodi et nulla facilis?</p>
       </div>
-      <div role="tabpanel" :class="{actif:ouvert === 2,}">
+      <div role="tabpanel" :class="{actif:IsOpen === 2,}">
         <h1>Panneau 2</h1>
         <p>Quibusdam perferendis ratione eaque nostrum repellendus nobis id quaerat, dolore earum nemo molestiae aspernatur laborum in eligendi reprehenderit possimus expedita vero numquam suscipit distinctio accusamus veniam blanditiis quo. Quis, totam?</p>
       </div>
-      <div role="tabpanel" :class="{actif:ouvert === 3,}">
+      <div role="tabpanel" :class="{actif:IsOpen === 3,}">
         <h1>Panneau 3</h1>
         <p>Facere cupiditate at voluptatem. Facilis natus numquam amet distinctio? Eum culpa temporibus, cumque quae nisi voluptatum veritatis neque nemo voluptate vel at! Fugiat veniam reiciendis, possimus in vel eaque consequatur.</p>
       </div>
