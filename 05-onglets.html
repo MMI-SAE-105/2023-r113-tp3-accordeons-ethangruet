@@ -13,9 +13,9 @@
       ouvert : 1,
      }">
      <ul role="tablist">
-      <button role="tab" :class="{actif:IsOpen === 1}" @click="IsOpen = 1">Onglet 1</button>
-      <button role="tab" :class="{actif:IsOpen === 2}" @click="IsOpen = 2">Onglet 2</button>
-      <button role="tab" :class="{actif:IsOpen === 3}" @click="IsOpen = 3">Onglet 3</button>
+      <li role="tab" :class="{actif:IsOpen === 1}"><button @click="IsOpen = 1">Onglet 1</button></li>
+      <li role="tab" :class="{actif:IsOpen === 2}"><button @click="IsOpen = 2">Onglet 2</button></li>
+      <li role="tab" :class="{actif:IsOpen === 3}"><button @click="IsOpen = 3">Onglet 3</button></li>
      </ul>
      <div>
       <div role="tabpanel" :class="{actif:ouvert === 1,}">
